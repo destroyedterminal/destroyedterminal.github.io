@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DestroyedTerminal 2025 - Advanced Multi-Shell Terminal</title>
+	  <link rel="icon" href="data:image/png;base64,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" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0f0f13;
+            --bg-panel: #1a1a24;
+            --bg-accent: #2a2a3a;
+            --text-primary: #e0e0ff;
+            --text-secondary: #a0a0cc;
+            --accent-blue: #6c5ce7;
+            --accent-purple: #9b59b6;
+            --accent-red: #ff4757;
+            --accent-green: #1dd1a1;
+            --gradient-primary: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: radial-gradient(circle at top left, #1a0f2a, #0d0a1a);
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 30px 0;
+            background: rgba(10, 8, 20, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(108, 92, 231, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            animation: pulse 2s infinite;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-link {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terminal-animation {
+            width: 80%;
+            max-width: 900px;
+            height: 400px;
+            margin: 40px auto;
+            border-radius: 12px;
+            background: var(--bg-panel);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .terminal-header {
+            height: 40px;
+            background: var(--bg-accent);
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            gap: 10px;
+        }
+
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-button.red { background: #ff5f56; }
+        .terminal-button.yellow { background: #ffbd2e; }
+        .terminal-button.green { background: #27c93f; }
+
+        .terminal-title {
+            margin-left: 10px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .terminal-content {
+            padding: 20px;
+            height: calc(100% - 40px);
+            font-family: 'Consolas', monospace;
+            font-size: 1.1rem;
+            text-align: left;
+            overflow: hidden;
+            position: relative;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .terminal-line {
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .terminal-line:nth-child(1) { animation-delay: 0.3s; }
+        .terminal-line:nth-child(2) { animation-delay: 0.6s; }
+        .terminal-line:nth-child(3) { animation-delay: 0.9s; }
+        .terminal-line:nth-child(4) { animation-delay: 1.2s; }
+        .terminal-line:nth-child(5) { animation-delay: 1.5s; }
+        .terminal-line:nth-child(6) { animation-delay: 1.8s; }
+        .terminal-line:nth-child(7) { animation-delay: 2.1s; }
+        .terminal-line:nth-child(8) { animation-delay: 2.4s; }
+        .terminal-line:nth-child(9) { animation-delay: 2.7s; }
+        .terminal-line:nth-child(10) { animation-delay: 3.0s; }
+        .terminal-line:nth-child(11) { animation-delay: 3.3s; }
+
+        .terminal-prompt {
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .terminal-command {
+            color: var(--accent-blue);
+        }
+
+        .terminal-output {
+            color: var(--text-primary);
+        }
+
+        .terminal-path {
+            color: var(--accent-purple);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGradient 3s ease infinite;
+            background-size: 200% auto;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--text-secondary);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-panel);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.2);
+            border-color: rgba(108, 92, 231, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-purple);
+        }
+
+        /* Download Section */
+        .download {
+            padding: 80px 0;
+            text-align: center;
+            background: rgba(15, 10, 30, 0.6);
+            border-radius: 20px;
+            margin: 40px 0;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+        }
+
+        .download-options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-store {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn-direct {
+            background: var(--bg-accent);
+            color: var(--text-primary);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.4);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-panel);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px 0;
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            position: relative;
+        }
+
+        .warning-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: var(--accent-red);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            animation: pulse 1.5s infinite;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about h3 {
+            color: var(--accent-blue);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .about strong {
+            color: var(--accent-green);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: var(--text-secondary);
+            margin-top: 60px;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Animations */
+        @keyframes titleGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            animation: typing 3s steps(40, end);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .terminal-animation {
+                height: 300px;
+                width: 95%;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-terminal logo-icon"></i>
+                    <h1 class="logo-text">DestroyedTerminal</h1>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/lifedestroyed/" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://x.com/lifedestroyd/" class="social-link" target="_blank">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://lifedestroyed.github.io/" class="social-link" target="_blank">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>DestroyedTerminal 2025</h1>
+            <p>The Ultimate Multi-Shell Terminal Experience for Windows</p>
+            
+            <div class="terminal-animation">
+                <div class="terminal-header">
+                    <div class="terminal-button red"></div>
+                    <div class="terminal-button yellow"></div>
+                    <div class="terminal-button green"></div>
+                    <div class="terminal-title">DestroyedOS Terminal</div>
+                </div>
+                <div class="terminal-content">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">user@DestroyedOS ></span> 
+                        <span class="terminal-command">welcome</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output">DestroyedOS Terminal v2025.1 (build 7890) - BETA</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">user@DestroyedOS ></span> 
+                        <span class="terminal-command">curl https://lifedestroyed.github.io/destroyedterminal/ --download --preview</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output">Downloading destroyedterminal_beta.exe... [██████████] 100%</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output">File preview: DestroyedTerminal Installer (v2025.1-beta)</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">user@DestroyedOS ></span> 
+                        <span class="terminal-command">system --info</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output">DestroyedOS v2025.1 | Terminal v3.4.2 | Shells: PowerShell, CMD, Python</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">user@DestroyedOS ></span> 
+                        <span class="terminal-command">_</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-window-restore feature-icon"></i>
+                    <h3 class="feature-title">Multi-Shell Environment</h3>
+                    <p>Seamlessly switch between PowerShell, CMD, and Python shells in a single tabbed interface. Run scripts and commands without switching applications.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-moon feature-icon"></i>
+                    <h3 class="feature-title">Dark Theme & Customization</h3>
+                    <p>Beautiful dark theme designed for extended coding sessions. Fully customizable UI with support for themes, layouts, and personal preferences.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-bolt feature-icon"></i>
+                    <h3 class="feature-title">Performance Optimized</h3>
+                    <p>Built for speed with minimal resource consumption. Handle heavy workloads with our efficient process management system.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-code feature-icon"></i>
+                    <h3 class="feature-title">Advanced Scripting</h3>
+                    <p>Integrated Python environment with full access to Windows APIs. Create and execute complex scripts without leaving the terminal.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-plug feature-icon"></i>
+                    <h3 class="feature-title">Plugin System</h3>
+                    <p>Extend functionality with community plugins or create your own. Add features like SSH clients, Docker integration, and more.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-sync-alt feature-icon"></i>
+                    <h3 class="feature-title">Auto Updates</h3>
+                    <p>Stay current with the latest features and security updates. Our smart update system keeps you on the cutting edge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download">
+        <div class="container">
+            <h2 class="section-title">Get DestroyedTerminal</h2>
+            <p>Choose your preferred installation method</p>
+            
+            <div class="download-options">
+                <a href="#" class="download-btn btn-store">
+                    <i class="fab fa-microsoft"></i>
+                    Download from Microsoft Store
+                </a>
+                
+                <a href="https://lifedestroyed.github.io/destroyedterminal/" class="download-btn btn-direct">
+                    <i class="fas fa-download"></i>
+                    Direct Download (Latest BETA)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="warning-badge">IMPORTANT</div>
+            <div class="about-content">
+                <h3>About Version Distribution</h3>
+                <p><strong>Microsoft Store:</strong> Only stable RELEASE versions are published on the Microsoft Store. These versions are thoroughly tested and recommended for production environments.</p>
+                
+                <p><strong>Official Website:</strong> For the latest features and updates, download BETA versions directly from our official website. These versions contain cutting-edge improvements but may have some instability.</p>
+                
+                <p>We recommend that most users use the stable version from the Microsoft Store. Developers and enthusiasts who want early access to new features can use BETA versions from our website.</p>
+                
+                <p>All versions are digitally signed and verified for your security. Never download DestroyedTerminal from unofficial sources.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/lifedestroyed/" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://x.com/lifedestroyd/" class="social-link" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://lifedestroyed.github.io/" class="social-link" target="_blank">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+            
+            <p class="copyright">© 2025 life destroyed. All rights not reserved, just please don't steal my work :<</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate feature cards on scroll
+            const featureCards = document.querySelectorAll('.feature-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.8s forwards';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            featureCards.forEach(card => {
+                card.style.opacity = '0';
+                observer.observe(card);
+            });
+            
+            // Terminal animation
+            const terminalLines = document.querySelectorAll('.terminal-line');
+            setTimeout(() => {
+                terminalLines.forEach((line, index) => {
+                    setTimeout(() => {
+                        line.style.animation = 'fadeIn 0.5s forwards';
+                    }, 500 * index);
+                });
+            }, 1000);
+            
+            // Cursor blinking animation
+            const cursor = document.querySelector('.terminal-line:last-child .terminal-command');
+            let cursorVisible = true;
+            setInterval(() => {
+                cursorVisible = !cursorVisible;
+                cursor.style.opacity = cursorVisible ? '1' : '0';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
